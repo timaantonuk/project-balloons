@@ -1,0 +1,110 @@
+.card-tour
+    height: 50rem 
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+   
+    &__side
+        height: 50rem
+        transition: 1s all ease-in-out
+        color: white
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        box-shadow: $box-shadow
+        border-radius: 1rem
+        overflow: hidden
+        
+        &_front
+            background: $color-white
+        &_back
+            background: linear-gradient(120deg, $color-brown-light, $color-brown-dark), center / cover no-repeat
+            transform: rotateY(180deg)
+
+
+    &:hover &__side_front
+        transform: rotateY(-180deg)
+
+    &:hover &__side_back
+        transform: rotateY(0deg)
+
+    &__img
+        height: 21rem
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+        margin-bottom: 6rem
+
+        @include respond(tab-port)
+            margin-bottom: 4rem
+        &_1
+            background: url(../img/tour-card1.png) center / cover no-repeat
+        &_2
+            background: url(../img/tour-card2.png) center / cover no-repeat
+        &_3
+            background: url(../img/tour-card3.png) center / cover no-repeat
+        
+    &__title
+        font-size: 2.8rem
+        letter-spacing: .2rem
+        font-weight: 300
+        text-align: right
+        text-transform: uppercase
+        position: absolute
+        top: 17rem
+        right: 0rem
+    &__span
+        background: linear-gradient(90deg, $color-brown-light, $color-brown-dark) center / cover no-repeat
+        padding: 1rem 2rem
+        &_1
+        &_2
+            position: absolute
+            top: 4rem
+            right: 0
+    &__desc
+        ul
+            list-style: none
+            margin: 0 auto
+            width: 70%
+            text-align: center
+            li
+                font-size: $font-size-paragraph
+
+                @include respond(tab-port)
+                    font-size: 2rem
+
+                display: inline-block
+                letter-spacing: .2rem
+                color: $color-gray
+                border-bottom: 1px dashed $color-gray
+                &:not(:last-child)
+                    margin-bottom: 2rem
+
+
+
+    &__backSide-box
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+    &__text
+        margin-bottom: 8rem
+        letter-spacing: .2rem
+        text-transform: uppercase
+        text-align: center
+        color: $color-white
+        &_1
+            font-size: 2rem
+            font-weight: 300
+        &_2
+            font-size: 6rem
+            font-weight: 500
+
+.title-form
+    @include respond(tab-port)
+        font-size: 2.4rem
+        letter-spacing: .2rem
+
+        
+                
+

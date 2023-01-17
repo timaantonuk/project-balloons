@@ -1,0 +1,29 @@
+.composition
+    position: relative
+
+    @include respond(tab-port)
+        margin-top: 10rem
+
+    &__item
+        width: 55%
+        box-shadow: $box-shadow
+        border-radius: .7rem
+        position: absolute
+        transition: .4s ease-in-out all
+
+        &_n1
+            top: 0
+            left: 2rem
+        &_n2
+            top: 2rem
+            right: 0
+        &_n3
+            top: 15rem
+            left: 10rem
+
+        &:hover
+            transform: scale(1.18)
+            z-index: 20
+    
+    &:hover &__item:not(:hover)
+        transform: scale(.95)
